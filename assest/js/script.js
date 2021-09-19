@@ -6,6 +6,11 @@ function displayCurrent(current) {
 // <section
    //           id="today"
      //       ></section>
+// loris PSC
+//     -Create 
+//     -create UL elements to make up todays weather list temp/wind/humd/UV
+//     -append to #today-weather-info ul 
+//     -get info for #searchTerm and append it to #today
 }
 
 function displayFiveDay(daily) {
@@ -15,10 +20,12 @@ function displayFiveDay(daily) {
      //       ></section>
 }
 
+// have bill go over
 function saveToLocalState(city) {
 
 }
 
+// Have bill go over
 function searchCityWeather() {
   const city = document.querySelector('#searchTerm').value;
   fetch(`${weatherApiRootUrl}/geo/1.0/direct?q=${city}&limit=5&appid=${weatherApiKey}`)

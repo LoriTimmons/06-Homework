@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   <!-- Have bill explain these. Kinda get it🚫 -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -22,12 +23,12 @@
   </head>
   <!-- Does this need to be more responsive? 🚫 -->
 <header class="col-12 bg-primary text-light sticky-top d-flex flex-column p-4 p-lg-3">
-  <h1>Weather</h1>
+  <h2>Weather</h1>
 </header>
-<!-- add more bootstrap. Do I need "col-12" in body🚫 -->
+<!-- add more bootstrap features🚫 -->
 <body>
     <div class="container-fluid" style="max-width: 1400px">
-      <div class="row">
+      <div class="row p-3">
         <aside class="col-lg-3">
           <h2 id="form-heading">
             Search for a City:
@@ -37,19 +38,31 @@
     <button onclick="searchCityWeather()">Search!</button>
           <div class="list-group" id="history">
           </div>
+        </aside>
           <!-- Current weather in searched city -->
-          <div class="col-lg-9">
-            <!-- is this where i need to city to appear? append from the #searchTerm 🚫? -->
-            <section id="today" class ="card-header></section>
-              <h2 id="form-today"></h2>Call City here?</h2>
+          <div class= "card col-lg-9 p-3">
+     <!-- is this where i need to city to appear? append from the #searchTerm 🚫?  -->
+            <section id="today"></section>
+              <h2 id="form-today" class ="card-header">Call City here?</h2>
+              <!-- add bootstrap "list-group and list-group-flush"🚫 -->
+              <ul id="today-weather-info"></ul>
             </section>
+          </div>
 
+<!-- FORECAST -->
             <section id="forecast">
+              <div class="row">
+                <h2>5 Day forecast</h2>
+                <!-- list to call forecast data -->
+                <ul id="forecast-info">
+<!-- need to add list items for the 5 day forecast? This might be done in JS dynamically🚫 -->
+                </ul>
+              </div>
+              </div>
 
             </section>
           </div>
-        </aside>
       </div>
-    <script src="./script.js"></script>
+    <script src="./assest/js/script.js"></script>
   </body>
 </html>
