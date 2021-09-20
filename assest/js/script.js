@@ -7,16 +7,28 @@ const weatherApiKey = 'd91f911bcf2c0f925fb6535547a5ddc9';
 //--does search history stay between refreshes 
 
 function displayCurrent(current) {
-  // where does this go!?🚫 
+  // add a text content to textcontent()
   const currentWeather = $("#today");
+
+  // replace current weather with searchTerm
+  const currentCity = document.querySelector('#searchTerm').value;
+  document.getElementById("form-today").innerHTML = currentCity;
+  console.log(currentCity);
+  console.log($("#form-today"));
   console.log($("#today"));
   console.log(current);
   // template lit -Lori Look up. Added in vars easy. Just look up to def. Already using them 👀
-  currentWeather.append(`<p>Temp ${current.temp}<p>`);
-  currentWeather.append(`<p>Wind ${current.wind_speed}<p>`);
-  currentWeather.append(`<p>Humidity ${current.humidity}<p>`);
+  temp.append(` ${current.temp}`);
+  wind.append(` ${current.wind_speed}`);
+  humidity.append(` ${current.humidity}`);
+  uv.append(` ${current.uvi}`);
+  document.getElementById(temp).innerHTML = "";
+
+  // org code its populating to the top of the page
+  // currentWeather.append(` Wind ${current.wind_speed}`);
+  // currentWeather.append(`<p>Humidity ${current.humidity}<p>`);
   // UV Index need to add class to make the box change colors 🚫
-  currentWeather.append(`<p>UV Index: ${current.uvi}<p>`);
+  // currentWeather.append(`<p>UV Index: ${current.uvi}<p>`);
 }
 
 function displayFiveDay(daily) {
@@ -25,11 +37,28 @@ function displayFiveDay(daily) {
   // refactor to for loop 🚫
   console.log(daily[0].temp);
   const fiveDayWeather = $("#forecast");
-  fiveDayWeather.append(`<p>Temp ${daily[0].temp}<p>`);
-//Use jQuery to add to here:
-// <section
-   //           id="forecast"
-     //       ></section>
+ // Day 1
+  fiveDayWeather.append(`<p>Temp ${daily[0].temp.day}<p>`);
+  fiveDayWeather.append(`<p>Wind ${daily[0].wind_speed}<p>`);
+  fiveDayWeather.append(`<p>Humidity ${daily[0].humidity}<p>`);
+  // Day 2
+  fiveDayWeather.append(`<p>Temp ${daily[1].temp.day}<p>`);
+  fiveDayWeather.append(`<p>Wind ${daily[1].wind_speed}<p>`);
+  fiveDayWeather.append(`<p>Humidity ${daily[1].humidity}<p>`);
+  // Day 3
+  fiveDayWeather.append(`<p>Temp ${daily[2].temp.day}<p>`);
+  fiveDayWeather.append(`<p>Wind ${daily[2].wind_speed}<p>`);
+  fiveDayWeather.append(`<p>Humidity ${daily[2].humidity}<p>`);
+  // Day 4
+   fiveDayWeather.append(`<p>Temp ${daily[3].temp.day}<p>`);
+    fiveDayWeather.append(`<p>Wind ${daily[3].wind_speed}<p>`);
+    fiveDayWeather.append(`<p>Humidity ${daily[3].humidity}<p>`);
+
+  // Day 5
+   fiveDayWeather.append(`<p>Temp ${daily[4].temp.day}<p>`);
+   fiveDayWeather.append(`<p>Wind ${daily[4].wind_speed}<p>`);
+   fiveDayWeather.append(`<p>Humidity ${daily[4].humidity}<p>`);
+
 }
 
 

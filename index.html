@@ -41,14 +41,17 @@
           <div class="list-group" id="history">
           </div>
         </aside>
+
           <!-- Current weather in searched city -->
           <div class= "card col-lg-9 p-3">
      <!-- is this where i need to city to appear? append from the #searchTerm 🚫?  -->
             <section id="today"></section>
-              <h2 id="form-today" class ="card-header">Call City here?</h2>
-              <!-- add bootstrap "list-group and list-group-flush"🚫 -->
-              <!-- building it out for one city -->
-              <ul id="today-weather-info"></ul>
+              <h2 id="form-today" class ="card-header">Current Weather</h2>
+            <!-- can i refactor ❓  -->
+              <h3 id=temp>Temp</h3>
+              <h3 id=wind>Wind</h3>
+              <h3 id=humidity>Humidity</h3>
+              <h3 id=uv>Uv Index</h3>
             </section>
           </div>
 
@@ -56,10 +59,10 @@
             <section id="forecast">
               <div class="row">
                 <h2>5 Day forecast</h2>
-                <!-- list to call forecast data -->
-                <ul id="forecast-info">
-<!-- need to add list items for the 5 day forecast? This might be done in JS dynamically🚫 -->
+                <div class="card">
+                <ul id="forecast-info" class="list-group">
                 </ul>
+              </div>
               </div>
               </div>
 
