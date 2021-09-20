@@ -18,17 +18,21 @@ function displayCurrent(current) {
   console.log($("#today"));
   console.log(current);
   // template lit -Lori Look up. Added in vars easy. Just look up to def. Already using them 👀
-  temp.append(` ${current.temp}`);
-  wind.append(` ${current.wind_speed}`);
-  humidity.append(` ${current.humidity}`);
-  uv.append(` ${current.uvi}`);
-  document.getElementById(temp).innerHTML = "";
-
-  // org code its populating to the top of the page
-  // currentWeather.append(` Wind ${current.wind_speed}`);
-  // currentWeather.append(`<p>Humidity ${current.humidity}<p>`);
+    // org code its populating to the top of the page
+  currentWeather.append(` <p>Temp ${current.temp}</p>`);
+  currentWeather.append(` <p>Wind ${current.wind_speed}</p>`);
+  currentWeather.append(`<p>Humidity ${current.humidity}<p>`);
   // UV Index need to add class to make the box change colors 🚫
-  // currentWeather.append(`<p>UV Index: ${current.uvi}<p>`);
+  currentWeather.append(`<p>UV Index: ${current.uvi}<p>`);
+  
+  // old
+  // temp.append(` ${current.temp}`);
+  // wind.append(` ${current.wind_speed}`);
+  // humidity.append(` ${current.humidity}`);
+  // uv.append(` ${current.uvi}`);
+
+
+
 }
 
 function displayFiveDay(daily) {
