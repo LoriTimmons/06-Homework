@@ -7,7 +7,7 @@ const weatherApiKey = 'd91f911bcf2c0f925fb6535547a5ddc9';
 //--does search history stay between refreshes 
 
 function displayCurrent(current) {
-  // add a text content to textcontent()
+  // add a text content to textcontent() 🚫
   const currentWeather = $("#today");
 
   // replace current weather with searchTerm
@@ -73,7 +73,6 @@ function saveToLocalState(city) {
 
 }
 
-// Have bill go over
 function searchCityWeather() {
   const city = document.querySelector('#searchTerm').value;
   // fetch and getting a long string 

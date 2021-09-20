@@ -23,11 +23,9 @@
     <
     <title>Weather App</title>
   </head>
-  <!-- Does this need to be more responsive? 🚫 -->
 <header class="col-12 bg-primary text-light sticky-top d-flex flex-column p-4 p-lg-3">
   <h2>Weather</h1>
 </header>
-<!-- add more bootstrap features🚫 -->
 <body>
     <div class="container-fluid" style="max-width: 1400px">
       <div class="row p-3">
@@ -45,29 +43,21 @@
           <!-- Current weather in searched city -->
           <div class= "card col-lg-9 p-3">
      <!-- is this where i need to city to appear? append from the #searchTerm 🚫?  -->
-            <section id="today"></section>
+            <section id="today">
               <h2 id="form-today" class ="card-header">Current Weather</h2>
-            <!-- can i refactor ❓  -->
-              <h3 id=temp>Temp</h3>
-              <h3 id=wind>Wind</h3>
-              <h3 id=humidity>Humidity</h3>
-              <h3 id=uv>Uv Index</h3>
             </section>
           </div>
 
 <!-- FORECAST -->
-            <section id="forecast">
-              <div class="row">
-                <h2>5 Day forecast</h2>
-                <div class="card">
-                <ul id="forecast-info" class="list-group">
-                </ul>
-              </div>
-              </div>
-              </div>
-
-            </section>
+  <section id="forecast">
+     <h2>5 Day forecast</h2>
+              <h4 class="card-header">
+                Date
+                </h4>
+                  <p class= "m-1">Sample forecast</p>
+         </div>
           </div>
+          </section>
       </div>
     <script src="./assest/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
