@@ -1,29 +1,44 @@
 const weatherApiRootUrl = 'https://api.openweathermap.org';
 const weatherApiKey = 'd91f911bcf2c0f925fb6535547a5ddc9';
 // Loris edge cases 
-// --Box that changes colors for UVI
 // --Weather icons (font awesome)
 // --Date format (tricky) Search how to find current date. Set and add one "++". moments? append to right place.
+// DT date in "" convert to date. use moment.  See cdm link 
 //--does search history stay between refreshes 
 
 function displayCurrent(current) {
   // add a text content to textcontent() 🚫
   const currentWeather = $("#today");
+  currentWeather.empty ();
+  console.log(currentWeather);
+  console.log(current);
 
   // replace current weather with searchTerm
   const currentCity = document.querySelector('#searchTerm').value;
-  document.getElementById("form-today").innerHTML = currentCity;
-  console.log(currentCity);
-  console.log($("#form-today"));
-  console.log($("#today"));
-  console.log(current);
+  currentWeather.append(` <h2 id="form-today" class ="card-header">${currentCity} <span>${moment.unix(current.dt).format("MM/DD/YYYY")} </span> </h2> `);
+  // document.getElementById("form-today").innerHTML = currentCity;
+  // console.log(currentCity);
+  // console.log($("#form-today"));
+  // console.log($("#today"));
+  // console.log(current);
   // template lit -Lori Look up. Added in vars easy. Just look up to def. Already using them 👀
     // org code its populating to the top of the page
   currentWeather.append(` <p>Temp ${current.temp}</p>`);
   currentWeather.append(` <p>Wind ${current.wind_speed}</p>`);
   currentWeather.append(`<p>Humidity ${current.humidity}<p>`);
-  // UV Index need to add class to make the box change colors 🚫
-  currentWeather.append(`<p>UV Index: ${current.uvi}<p>`);
+  // UV Index need to add class to make the box change colors 
+  // currentWeather.append(`<p>UV Index: ${current.uvi}<p>`);
+  if (current.uvi < 3) {
+    currentWeather.append(`<p>UV Index: <span class="green"> ${current.uvi} </span></p>`);
+  } else if (current.uvi < 6) {
+    currentWeather.append(`<p>UV Index: <span class="yellow"> ${current.uvi} </span></p>`);
+  } else if (current.uvi < 8) {
+    currentWeather.append(`<p>UV Index: <span class="orange"> ${current.uvi} </span></p>`);
+  } else if (current.uvi < 11) {
+    currentWeather.append(`<p>UV Index: <span class="red"> ${current.uvi} </span></p>`);
+  } else {
+    currentWeather.append(`<p>UV Index: <span class="purple"> ${current.uvi} </span></p>`);
+  };
   
   // old
   // temp.append(` ${current.temp}`);
@@ -75,6 +90,7 @@ function saveToLocalState(city) {
 
 function searchCityWeather() {
   const city = document.querySelector('#searchTerm').value;
+  console.log(city);
   // fetch and getting a long string 
   console.log(`${weatherApiRootUrl}/geo/1.0/direct?q=${city}&limit=5&appid=${weatherApiKey}`);
   fetch(`${weatherApiRootUrl}/geo/1.0/direct?q=${city}&limit=5&appid=${weatherApiKey}`)
